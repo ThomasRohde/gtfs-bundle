@@ -1,0 +1,23 @@
+# Local agent/workspace state
+.agents/
+.codex/
+.scratch/
+
+# Python cache
+__pycache__/
+*.py[cod]
+
+# Generated release/review artifacts
+dist/
+*.zip
+*-viz.html
+
+# Temporary local probes
+nakskov-*.json
+rejseplanen-*.wadl
+
+# OS/editor noise
+.DS_Store
+Thumbs.db
+*.tmp
+*.log
