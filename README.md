@@ -3,7 +3,7 @@ type: "Reference"
 title: "GTFS Schedule OKF Data Catalog README"
 description: "Publication README for the GTFS Schedule OKF data catalog repository."
 tags: [gtfs, schedule, okf, repository, readme]
-timestamp: "2026-06-30T04:35:00+00:00"
+timestamp: "2026-06-30T06:22:18+02:00"
 ---
 
 # GTFS Schedule OKF Data Catalog
@@ -70,12 +70,21 @@ as discovery or implementation guidance, not specification authority.
 
 ## Validate
 
-Use the OKF Bundle Smith tooling:
+This repository uses the [OKF Bundle Smith Codex plugin](https://github.com/ThomasRohde/okf-bundle-smith/tree/master/plugins/okf-bundle-smith)
+for validation, graphing, and release packaging. Install it from its Codex
+marketplace before running the commands below:
 
 ```powershell
-python <okf-bundle-smith-plugin-root>\tools\okf_tool.py lint . --format markdown
-python <okf-bundle-smith-plugin-root>\tools\okf_tool.py stats .
-.\tools\build_release.ps1 -OkfTool <okf-bundle-smith-plugin-root>\tools\okf_tool.py
+codex plugin marketplace add ThomasRohde/okf-bundle-smith --ref master
+codex plugin add okf-bundle-smith@okf-bundle-smith
+```
+
+Then pass the installed plugin's `tools\okf_tool.py` path to the release script:
+
+```powershell
+python <installed-okf-bundle-smith>\tools\okf_tool.py lint . --format markdown
+python <installed-okf-bundle-smith>\tools\okf_tool.py stats .
+.\tools\build_release.ps1 -OkfTool <installed-okf-bundle-smith>\tools\okf_tool.py
 ```
 
 The release script copies tracked files into `.scratch\release-bundle`, validates
@@ -92,6 +101,11 @@ manually maintained concepts, indexes, and log entries before publishing.
 Do not package the Git working tree directly with `okf_tool.py package . ...`;
 the packager includes local directories such as `.git` and `dist`. Use
 `tools\build_release.ps1` for publication artifacts.
+
+# Citations
+
+- [OKF Bundle Smith README](https://github.com/ThomasRohde/okf-bundle-smith/tree/master/plugins/okf-bundle-smith) - plugin purpose, marketplace layout, and Codex install commands, checked 2026-06-30.
+- [OKF Bundle Smith plugin manifest](https://github.com/ThomasRohde/okf-bundle-smith/blob/master/plugins/okf-bundle-smith/.codex-plugin/plugin.json) - plugin name, display name, repository, and bundled tooling metadata, checked 2026-06-30.
 
 ## License
 

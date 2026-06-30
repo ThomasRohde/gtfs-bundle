@@ -3,7 +3,7 @@ type: "Reference"
 title: "Tools README"
 description: "Maintainer notes for repository helper tools."
 tags: [tools, maintenance, generator]
-timestamp: "2026-06-30T04:35:00+00:00"
+timestamp: "2026-06-30T06:22:18+02:00"
 ---
 
 # Tools
@@ -22,7 +22,9 @@ before publishing.
 Recommended checks:
 
 ```powershell
+codex plugin marketplace add ThomasRohde/okf-bundle-smith --ref master
+codex plugin add okf-bundle-smith@okf-bundle-smith
 python tools\build_gtfs_schedule_catalog.py
-python <okf-bundle-smith-plugin-root>\tools\okf_tool.py lint . --format markdown
-.\tools\build_release.ps1 -OkfTool <okf-bundle-smith-plugin-root>\tools\okf_tool.py
+python <installed-okf-bundle-smith>\tools\okf_tool.py lint . --format markdown
+.\tools\build_release.ps1 -OkfTool <installed-okf-bundle-smith>\tools\okf_tool.py
 ```
