@@ -75,11 +75,12 @@ Use the OKF Bundle Smith tooling:
 ```powershell
 python <okf-bundle-smith-plugin-root>\tools\okf_tool.py lint . --format markdown
 python <okf-bundle-smith-plugin-root>\tools\okf_tool.py stats .
-python <okf-bundle-smith-plugin-root>\tools\okf_tool.py visualize . -o dist\gtfs-schedule-catalog-viz.html
-python <okf-bundle-smith-plugin-root>\tools\okf_tool.py package . dist\gtfs-schedule-catalog.zip --format zip
+.\tools\build_release.ps1 -OkfTool <okf-bundle-smith-plugin-root>\tools\okf_tool.py
 ```
 
-The generated graph and zip are intentionally not tracked in Git.
+The release script copies tracked files into `.scratch\release-bundle`, validates
+that clean export, then writes the generated graph and zip into `dist\`. The
+generated artifacts are intentionally not tracked in Git.
 
 ## Maintenance
 
@@ -87,6 +88,10 @@ The generated graph and zip are intentionally not tracked in Git.
 repository root from the official GTFS Schedule Reference. The community
 enrichment layer is manually maintained. If the generator is rerun, reconcile
 manually maintained concepts, indexes, and log entries before publishing.
+
+Do not package the Git working tree directly with `okf_tool.py package . ...`;
+the packager includes local directories such as `.git` and `dist`. Use
+`tools\build_release.ps1` for publication artifacts.
 
 ## License
 
