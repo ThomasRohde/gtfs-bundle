@@ -1,6 +1,8 @@
 # Log
 
 ## 2026-06-30
+* **updated**: Refined AGENTS.md to direct real-world timetable questions through feed catalog and Rejseplanen GTFS retrieval before concluding the bundle lacks data.
+* **updated**: Added bundle-local AGENTS.md guidance for plain OKF consumption.
 * **updated**: Clarified README and tools README references to the OKF Bundle Smith Codex plugin, including marketplace installation commands and the plugin identifier `okf-bundle-smith@okf-bundle-smith`.
 * **updated**: Implemented GTFS community enrichment layer: validation concepts and validator workflow, stop-departure and service-calendar playbooks, static-vs-realtime boundary docs, extension maturity guidance, Fares v2/Flex/accessibility workflows, and community tool map.
 * **updated**: Added practical GTFS feed discovery coverage: GTFS feed catalog term, Mobility Database and Transitland system concepts, Rejseplanen Denmark feed example, and a process for finding and querying concrete GTFS feeds.
