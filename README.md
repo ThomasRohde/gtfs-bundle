@@ -1,3 +1,11 @@
+---
+type: "Reference"
+title: "GTFS Schedule OKF Data Catalog README"
+description: "Publication README for the GTFS Schedule OKF data catalog repository."
+tags: [gtfs, schedule, okf, repository, readme]
+timestamp: "2026-06-30T04:35:00+00:00"
+---
+
 # GTFS Schedule OKF Data Catalog
 
 This repository contains a public Open Knowledge Format (OKF) bundle for the
@@ -17,24 +25,24 @@ The bundle is built for agents that need to answer questions such as:
 
 ## Contents
 
-- `gtfs-schedule-catalog/` - the OKF bundle source.
+- `index.md` - the OKF bundle entry point.
+- `concepts/`, `datasets/`, `tables/`, `metrics/`, `processes/`, `systems/`, `decisions/` - the OKF bundle source.
 - `tools/build_gtfs_schedule_catalog.py` - generator for the base Schedule table catalog.
 - `dist/` - local generated artifacts, ignored by Git.
 - `.scratch/` - local research/probe captures, ignored by Git.
 
 The current bundle includes:
 
-- 79 concepts
-- 8 indexes
+- 83 concepts
+- 9 indexes
 - 1 log
 - 32 GTFS table concepts
 - 10 process playbooks
 - 5 system/tool/catalog concepts
-- 358 internal OKF graph edges
 
 ## Entry Points
 
-Start with [gtfs-schedule-catalog/index.md](gtfs-schedule-catalog/index.md).
+Start with [index.md](index.md).
 
 High-value agent paths:
 
@@ -65,20 +73,20 @@ as discovery or implementation guidance, not specification authority.
 Use the OKF Bundle Smith tooling:
 
 ```powershell
-python <okf-bundle-smith-plugin-root>\tools\okf_tool.py lint gtfs-schedule-catalog --format markdown
-python <okf-bundle-smith-plugin-root>\tools\okf_tool.py stats gtfs-schedule-catalog
-python <okf-bundle-smith-plugin-root>\tools\okf_tool.py visualize gtfs-schedule-catalog -o dist\gtfs-schedule-catalog-viz.html
-python <okf-bundle-smith-plugin-root>\tools\okf_tool.py package gtfs-schedule-catalog dist\gtfs-schedule-catalog.zip --format zip
+python <okf-bundle-smith-plugin-root>\tools\okf_tool.py lint . --format markdown
+python <okf-bundle-smith-plugin-root>\tools\okf_tool.py stats .
+python <okf-bundle-smith-plugin-root>\tools\okf_tool.py visualize . -o dist\gtfs-schedule-catalog-viz.html
+python <okf-bundle-smith-plugin-root>\tools\okf_tool.py package . dist\gtfs-schedule-catalog.zip --format zip
 ```
 
 The generated graph and zip are intentionally not tracked in Git.
 
 ## Maintenance
 
-`tools/build_gtfs_schedule_catalog.py` regenerates the base table catalog from
-the official GTFS Schedule Reference. The community enrichment layer is manually
-maintained. If the generator is rerun, reconcile manually maintained concepts,
-indexes, and log entries before publishing.
+`tools/build_gtfs_schedule_catalog.py` regenerates the base table catalog at the
+repository root from the official GTFS Schedule Reference. The community
+enrichment layer is manually maintained. If the generator is rerun, reconcile
+manually maintained concepts, indexes, and log entries before publishing.
 
 ## License
 

@@ -36,7 +36,8 @@ Public OKF bundle for answering GTFS Schedule modeling questions with citations.
 - Metric concepts: 7
 - Business-term concepts: 11
 - Architectural-decision concepts: 4
-- Reference concepts: 8
+- Reference concepts: 10
+- License/notice concepts: 2
 
 ## Directories
 
@@ -47,6 +48,13 @@ Public OKF bundle for answering GTFS Schedule modeling questions with citations.
 - [Tables](tables/index.md) - one concept per GTFS Schedule file.
 - [Metrics](metrics/index.md) - common service KPIs derivable from schedule files.
 - [Decisions](decisions/index.md) - modeling decisions and scope boundaries.
+- [Tools](tools/index.md) - maintainer helper scripts and tool notes.
+
+## Publication Resources
+
+- [README](README.md) - repository overview and validation commands.
+- [License](LICENSE.md) - license statement for original OKF bundle content.
+- [Notice](NOTICE.md) - third-party source and generated artifact notice.
 
 ## Freshness
 

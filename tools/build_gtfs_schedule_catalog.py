@@ -17,7 +17,7 @@ from datetime import datetime, timezone
 from pathlib import Path
 
 
-BUNDLE = Path("gtfs-schedule-catalog")
+BUNDLE = Path(".")
 REFERENCE_URL = "https://gtfs.org/documentation/schedule/reference/"
 REFERENCE_RAW_URL = "https://raw.githubusercontent.com/google/transit/master/gtfs/spec/en/reference.md"
 GITHUB_REFERENCE_URL = "https://github.com/google/transit/blob/master/gtfs/spec/en/reference.md"

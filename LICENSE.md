@@ -1,3 +1,11 @@
+---
+type: "License"
+title: "Repository License"
+description: "License statement for original OKF bundle content in this repository."
+tags: [license, cc-by-4-0]
+timestamp: "2026-06-30T04:35:00+00:00"
+---
+
 # License
 
 SPDX-License-Identifier: CC-BY-4.0

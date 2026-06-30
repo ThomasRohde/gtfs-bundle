@@ -1,3 +1,11 @@
+---
+type: "Notice"
+title: "Repository Notice"
+description: "Notice for third-party sources and generated artifacts referenced by this OKF bundle repository."
+tags: [notice, attribution, third-party-sources]
+timestamp: "2026-06-30T04:35:00+00:00"
+---
+
 # Notice
 
 This repository contains an original OKF data catalog and workflow layer derived
